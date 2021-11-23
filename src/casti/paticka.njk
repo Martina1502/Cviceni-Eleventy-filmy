@@ -1,12 +1,12 @@
-<footer class="paticka">
-    <section class="paticka__casti">
+<footer>
+    <section class="paticka">
         <div>
             <h3>
             Podobné weby
             </h3>
-            <ul class="paticka__casti--ul">
+            <ul class="paticka__seznam">
                 {% for web in podobneWeby %}
-                <li><a class="paticka__casti--odkaz" href="{{ web.adresa }}">{{ web.nazev }}</a></li>
+                <li><a class="paticka__seznam-polozka" href="{{ web.adresa }}">{{ web.nazev }}</a></li>
                 {% endfor %}
             </ul>
 
@@ -17,10 +17,10 @@
             Obecné
             </h3>
 
-            <ul class="paticka__casti--ul">
-                <li><a class="paticka__casti--odkaz" href="/puvod-dat/">Původ dat</a></li>
-                <li><a class="paticka__casti--odkaz" href="https://www.11ty.dev/">Eleventy dokumentace</a></li>
-                <li><a class="paticka__casti--odkaz" href="https://github.com/Czechitas-podklady-WEB/Cviceni-Eleventy-filmy">Zadání cvičení</a></li>
+            <ul class="paticka__seznam">
+                <li><a class="paticka__seznam-polozka" href="/puvod-dat/">Původ dat</a></li>
+                <li><a class="paticka__seznam-polozka" href="https://www.11ty.dev/">Eleventy dokumentace</a></li>
+                <li><a class="paticka__seznam-polozka" href="https://github.com/Czechitas-podklady-WEB/Cviceni-Eleventy-filmy">Zadání cvičení</a></li>
             </ul>
 
         </div>
