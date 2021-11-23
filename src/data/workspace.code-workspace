@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "..\\.."
+		},
+		{
+			"path": "..\\..\\..\\Cviceni-Eleventy-galerie"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Cviceni-Eleventy-filmy"
+	}
+}

@@ -6,5 +6,77 @@ pagination:
   alias: film
 permalink: "/film/{{ film.nazev | slug }}/"
 ---
+<section class="film">
+  <section class="film--levy">
+    <h2>{{ film.nazev }}</h2>
+    <section class="film__specifika">
+      <h4 class="film__specifika-polozka">Rok:</h4>
+      <p class="film__specifika-polozka-vypis">{{ film.rok }}</p>
 
-<h2>{{ film.nazev }}</h2>
+      <h4 class="film__specifika-polozka">Země:</h4>
+      <p class="film__specifika-polozka-vypis">{{ film.zeme | join(', ') }}</p>
+
+      <h4 class="film__specifika-polozka">Žánr:</h4>
+      <p class="film__specifika-polozka-vypis">{{ film.zanr | join(' / ') }}</p>
+
+      <h4 class="film__specifika-polozka">Délka:</h4>
+      <p class="film__specifika-polozka-vypis">{{ film.delka }} min</p>
+    </section>
+
+    <h3>Obsah</h3>
+
+    <p>{{ film.obsah.text }} (<a class="film__obsah-odkaz" href="{{ film.obsah.autor.odkaz }}">{{ film.obsah.autor.jmeno }}</a>)</p>
+  </section>
+
+  <section class="film--pravy">
+    <img src={{ film.plakat.url }} width="200px">
+
+    <h3>Hodnocení</h3>
+    {% if film.hodnoceni == 1 %}
+<img src="obrazky/hvezda-vyplnena.svg">
+<img src="obrazky/hvezda-prazdna.svg">
+<img src="obrazky/hvezda-prazdna.svg">
+<img src="obrazky/hvezda-prazdna.svg">
+<img src="obrazky/hvezda-prazdna.svg">
+{% endif %}
+
+{% if film.hodnoceni == 2 %}
+<img src="/obrazky/hvezda-vyplnena.svg">
+<img src="/obrazky/hvezda-vyplnena.svg">
+<img src="/obrazky/hvezda-prazdna.svg">
+<img src="/obrazky/hvezda-prazdna.svg">
+<img src="/obrazky/hvezda-prazdna.svg">
+{% endif %}
+
+{% if film.hodnoceni == 3 %}
+<img src="/obrazky/hvezda-vyplnena.svg">
+<img src="/obrazky/hvezda-vyplnena.svg">
+<img src="/obrazky/hvezda-vyplnena.svg">
+<img src="/obrazky/hvezda-prazdna.svg">
+<img src="/obrazky/hvezda-prazdna.svg">
+{% endif %}
+
+{% if film.hodnoceni == 4 %}
+<img src="/obrazky/hvezda-vyplnena.svg">
+<img src="/obrazky/hvezda-vyplnena.svg">
+<img src="/obrazky/hvezda-vyplnena.svg">
+<img src="/obrazky/hvezda-vyplnena.svg">
+<img src="/obrazky/hvezda-prazdna.svg">
+{% endif %}
+
+{% if film.hodnoceni == 5 %}
+<img src="/obrazky/hvezda-vyplnena.svg">
+<img src="/obrazky/hvezda-vyplnena.svg">
+<img src="/obrazky/hvezda-vyplnena.svg">
+<img src="/obrazky/hvezda-vyplnena.svg">
+<img src="/obrazky/hvezda-vyplnena.svg">
+{% endif %}
+
+    <h3>Související filmy</h3>
+    <section class="seznam">
+      {% for souvisejiciFilm in film.souvisejici %}
+      <li class="seznam--polozka"><a href="/film/{{ souvisejiciFilm.nazev | slug }}">{{ souvisejiciFilm.nazev }}</a></li>
+      {% endfor %}
+    </section>
+  </section>
+</section>

@@ -8,7 +8,50 @@ html {
 	box-sizing: inherit;
 }
 
+:root {
+	--hlavni-barva: #9c27b0;
+	--doplnkova-barva: #3d5afe;
+}
+
 body {
 	font-family: 'Roboto', sans-serif;
-    margin: 0;
+	margin: 0;
+}
+
+.layout {
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	height: 100vh;
+}
+
+.layout__obsah {
+    max-width: 52rem;
+	width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+a:link {
+	text-decoration: none;
+  	color:var(--doplnkova-barva);
+  }
+  
+a:visited {
+	text-decoration: none;
+  	color:var(--doplnkova-barva);
+  }
+  
+a:hover {
+	text-decoration: underline;
+  }
+
+.seznam {
+	list-style: square inside none;
+	color: var(--doplnkova-barva);
+	padding-left: 0;
+}
+
+.seznam--polozka {
+	padding: 0.2em 0;
+	line-height: 1.1;
 }

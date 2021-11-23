@@ -1,0 +1,24 @@
+.film {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 30px;
+}
+
+.film__specifika {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 15px;
+    row-gap: 5px;
+}
+
+.film__specifika-polozka {
+    margin: 0;
+}
+
+.film__specifika-polozka-vypis {
+    margin: 0;
+}
+
+.film__obsah-odkaz {
+    font-style: italic;
+}
